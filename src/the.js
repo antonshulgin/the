@@ -75,8 +75,9 @@
 	externals.isNumber = function (isSilent) {
 		var value = internals.getValue();
 		var isNumber = (Object.prototype.toString.call(value) === '[object Number]');
+		var isPlainNumber = (typeof value === 'number');
 		var isFiniteNumber = isFinite(value);
-		var isNumberForReal = isNumber && isFiniteNumber;
+		var isNumberForReal = isNumber && isPlainNumber && isFiniteNumber;
 		return internals.out(isNumberForReal, "a number", isSilent);
 	};
 
