@@ -14,8 +14,8 @@
 
 	externals.isInstanceOf = function (constructor, isSilent) {
 		var value = internals.getValue();
-		var isIntanceOf = (value instanceof constructor);
-		return internals.out(isIntanceOf, 'an instance of ' + constructor.name, isSilent);
+		var isInstanceOf = (value instanceof constructor);
+		return internals.out(isInstanceOf, 'an instance of ' + constructor.name, isSilent);
 	};
 
 	externals.isRegExp = function (isSilent) {
@@ -64,12 +64,6 @@
 		var value = internals.getValue();
 		var isNull = (value === null);
 		return internals.out(isNull, 'null', isSilent);
-	};
-
-	externals.isUndefined = function (isSilent) {
-		var value = internals.getValue();
-		var isUndefined = (value === undefined);
-		return internals.out(isUndefined, 'an undefined value', isSilent);
 	};
 
 	externals.isDefined = function (isSilent) {
