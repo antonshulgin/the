@@ -57,7 +57,9 @@
 	externals.isString = function (isSilent) {
 		var value = internals.getValue();
 		var isString = (Object.prototype.toString.call(value) === '[object String]');
-		return internals.out(isString, 'a string', isSilent);
+		var isPlainString = (typeof value === 'string');
+		var isStringForReal = isString && isPlainString;
+		return internals.out(isStringForReal, 'a string', isSilent);
 	};
 
 	externals.isNull = function (isSilent) {
