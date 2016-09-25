@@ -14,10 +14,13 @@ For Node.js:
 const the = require('./path/to/the.js');
 ```
 
-For browser:
+For browser environments:
 
 ```html
 <script src='./path/to/dist/the.min.js'></script>
+<script>
+	the(42).isNumber();
+</script>
 ```
 
 ## Usage
