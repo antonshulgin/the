@@ -34,7 +34,8 @@ console.log(the(thing).isString(true)); // still false, but no console output
 
 ## Methods
 
-### .isNumber(isSilent);
+### .isNumber([isSilent]);
+the(new Thing()).isInstanceOf(Function); // false
 
 Checks if the value is a finite number.
 
@@ -48,7 +49,8 @@ the(NaN).isNumber(); // false
 the(Infinity).isNumber(); // false
 ```
 
-### .isDefined(isSilent);
+### .isDefined([isSilent]);
+the(new Thing()).isInstanceOf(Function); // false
 
 Checks if the value is not `undefined`.
 
@@ -60,7 +62,8 @@ the({}).isDefined(); // true
 the().isDefined(); // false
 ```
 
-### .isNull(isSilent);
+### .isNull([isSilent]);
+the(new Thing()).isInstanceOf(Function); // false
 
 Checks if the value is `null`.
 
@@ -70,7 +73,8 @@ the(0).isNull(); // false
 the().isNull(); // false
 ```
 
-### .isString(isSilent);
+### .isString([isSilent]);
+the(new Thing()).isInstanceOf(Function); // false
 
 Checks if the value is a string.
 
@@ -81,7 +85,8 @@ the([]).isString(); // false
 the({}).isString(); // false
 ```
 
-### .isBoolean(isSilent);
+### .isBoolean([isSilent]);
+the(new Thing()).isInstanceOf(Function); // false
 
 Checks if the value is boolean.
 
@@ -93,7 +98,8 @@ the(new Boolean()).isBoolean(); // true
 the(0).isBoolean(); // false
 ```
 
-### .isFunction(isSilent);
+### .isFunction([isSilent]);
+the(new Thing()).isInstanceOf(Function); // false
 
 Checks if the value is a function.
 
@@ -108,7 +114,8 @@ let Thing = function () {};
 the(new Thing()).isFunction(); // false
 ```
 
-### .isObject(isSilent);
+### .isObject([isSilent]);
+the(new Thing()).isInstanceOf(Function); // false
 
 Checks if the value is an object literal.
 
@@ -123,7 +130,8 @@ the(NaN).isObject(); // false
 the(null).isObject(); // false
 ```
 
-### .isArray(isSilent);
+### .isArray([isSilent]);
+the(new Thing()).isInstanceOf(Function); // false
 
 Checks if the value is an array.
 
@@ -137,7 +145,7 @@ function fn(arg1, arg2) {
 }
 ```
 
-### .isDate(isSilent);
+### .isDate([isSilent]);
 
 Checks if the value is a date.
 
@@ -150,17 +158,19 @@ let timeDiff = (new Date('1970-01-01 00:10')) - (new Date('1970-01-01 00:05'));
 the(timeDiff).isDate(); // false
 ```
 
-### .isRegExp(isSilent);
+### .isRegExp([isSilent]);
+the(new Thing()).isInstanceOf(Function); // false
 
 Checks if the value is a regular expression.
 
 ```javascript
+the(new Thing()).isInstanceOf(Function); // false
 the(/^.+$/ig).isRegExp(); // true
 the(new RegExp('/^.+$/', 'ig')).isRegExp(); // true
 the('/^.+$/').isRegExp(); // false
 ```
 
-### .isInstanceOf(constructor, isSilent);
+### .isInstanceOf(constructor[, isSilent]);
 
 Checks if the value is an instance of a class (constructor).
 
