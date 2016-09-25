@@ -11,7 +11,8 @@ describe('isArray', function () {
 
 	const validValues = [
 		[],
-		new Array()
+		new Array(),
+		new Array([null, 42, undefined])
 	];
 
 	const invalidValues = [
@@ -32,6 +33,16 @@ describe('isArray', function () {
 		[].join(''),
 		false,
 		function () { return 42; },
+		new Date(),
+		new Function(),
+		new Number(),
+		new Number(42),
+		new Object(),
+		new RegExp('^[\w\d\s]+$', 'gi'),
+		new RegExp(),
+		new String('42'),
+		new String(),
+		new String(42),
 		new Thing(),
 		true,
 		undefined,
