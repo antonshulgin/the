@@ -10,10 +10,11 @@ describe('isFunction', function () {
 	const Thing = function () {};
 
 	const validValues = [
-		function () { return 42; },
 		console.log,
+		function () { return 42; },
+		isFinite,
 		isNaN,
-		isFinite
+		new Function()
 	];
 
 	const invalidValues = [
@@ -37,7 +38,6 @@ describe('isFunction', function () {
 		new Array(),
 		new Array([null, 42, undefined]),
 		new Date(),
-		new Function(),
 		new Number(),
 		new Number(42),
 		new Object(),

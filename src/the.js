@@ -51,7 +51,9 @@
 	externals.isBoolean = function (isSilent) {
 		var value = internals.getValue();
 		var isBoolean = (Object.prototype.toString.call(value) === '[object Boolean]');
-		return internals.out(isBoolean, 'a boolean', isSilent);
+		var isPlainBoolean = (typeof value === 'boolean');
+		var isBooleanForReal = isBoolean && isPlainBoolean;
+		return internals.out(isBooleanForReal, 'a boolean', isSilent);
 	};
 
 	externals.isString = function (isSilent) {
