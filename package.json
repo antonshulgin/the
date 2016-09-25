@@ -1,0 +1,32 @@
+{
+  "name": "the",
+  "version": "0.0.1",
+  "description": "Type-checking library for Javascript",
+  "main": "src/the.js",
+  "scripts": {
+		"start": "npm run build",
+		"build": "npm run reset-dist && npm run uglify",
+		"reset-dist": "rm -rf ./dist/ && mkdir ./dist/",
+		"uglify": "./node_modules/uglifyjs/bin/uglifyjs ./src/the.js --compress --mangle --output=./dist/the.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antonshulgin/the.git"
+  },
+  "keywords": [
+    "the",
+    "type-checking",
+    "types",
+    "check",
+    "js"
+  ],
+  "author": "Anton Shulgin <anton.shulgin@gmx.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antonshulgin/the/issues"
+  },
+  "homepage": "https://github.com/antonshulgin/the#readme",
+  "devDependencies": {
+    "uglifyjs": "^2.4.10"
+  }
+}
