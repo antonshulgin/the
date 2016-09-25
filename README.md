@@ -38,7 +38,6 @@ console.log(the(thing).isString(true)); // still false, but no console output
 ## Methods
 
 ### .isNumber([isSilent]);
-the(new Thing()).isInstanceOf(Function); // false
 
 Checks if the value is a finite number.
 
@@ -53,7 +52,6 @@ the(Infinity).isNumber(); // false
 ```
 
 ### .isDefined([isSilent]);
-the(new Thing()).isInstanceOf(Function); // false
 
 Checks if the value is not `undefined`.
 
@@ -66,7 +64,6 @@ the().isDefined(); // false
 ```
 
 ### .isNull([isSilent]);
-the(new Thing()).isInstanceOf(Function); // false
 
 Checks if the value is `null`.
 
@@ -77,7 +74,6 @@ the().isNull(); // false
 ```
 
 ### .isString([isSilent]);
-the(new Thing()).isInstanceOf(Function); // false
 
 Checks if the value is a string.
 
@@ -89,7 +85,6 @@ the({}).isString(); // false
 ```
 
 ### .isBoolean([isSilent]);
-the(new Thing()).isInstanceOf(Function); // false
 
 Checks if the value is boolean.
 
@@ -102,7 +97,6 @@ the(0).isBoolean(); // false
 ```
 
 ### .isFunction([isSilent]);
-the(new Thing()).isInstanceOf(Function); // false
 
 Checks if the value is a function.
 
@@ -118,7 +112,6 @@ the(new Thing()).isFunction(); // false
 ```
 
 ### .isObject([isSilent]);
-the(new Thing()).isInstanceOf(Function); // false
 
 Checks if the value is an object literal.
 
@@ -134,7 +127,6 @@ the(null).isObject(); // false
 ```
 
 ### .isArray([isSilent]);
-the(new Thing()).isInstanceOf(Function); // false
 
 Checks if the value is an array.
 
@@ -162,12 +154,10 @@ the(timeDiff).isDate(); // false
 ```
 
 ### .isRegExp([isSilent]);
-the(new Thing()).isInstanceOf(Function); // false
 
 Checks if the value is a regular expression.
 
 ```javascript
-the(new Thing()).isInstanceOf(Function); // false
 the(/^.+$/ig).isRegExp(); // true
 the(new RegExp('/^.+$/', 'ig')).isRegExp(); // true
 the('/^.+$/').isRegExp(); // false
