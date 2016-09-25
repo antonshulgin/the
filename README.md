@@ -92,7 +92,7 @@ Checks if the value is boolean.
 the(true).isBoolean(); // true
 the(false).isBoolean(); // true
 the(!0).isBoolean(); // true
-the(new Boolean()).isBoolean(); // true
+the(new Boolean()).isBoolean(); // false
 the(0).isBoolean(); // false
 ```
 
@@ -104,7 +104,7 @@ Checks if the value is a function.
 the(function () { return 42; }).isFunction(); // true
 the(console.log).isFunction(); // true
 the(isNaN).isFunction(); // true
-the(Function).isFunction(); // true
+the(new Function()).isFunction(); // true
 the(null).isFunction(); // false
 
 let Thing = function () {};
