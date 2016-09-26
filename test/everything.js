@@ -6,6 +6,7 @@ require('./isNumber.js');
 require('./isDefined.js');
 require('./isNull.js');
 require('./isString.js');
+require('./isHexString.js');
 require('./isBoolean.js');
 require('./isFunction.js');
 require('./isObject.js');

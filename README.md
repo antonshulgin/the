@@ -84,6 +84,18 @@ the([]).isString(); // false
 the({}).isString(); // false
 ```
 
+### .isHexString([isSilent]);
+
+Checks if the value is a hex string.
+
+```javascript
+the('000000').isHexString(); // true
+the('abcdef').isHexString(); // true
+the('42').isHexString(); // true
+the(' 0 0 ').isHexString(); // false
+the('ghijklmnopqrstuvwxyz').isHexString(); // false
+the('').isHexString(); // false
+
 ### .isBoolean([isSilent]);
 
 Checks if the value is boolean.
