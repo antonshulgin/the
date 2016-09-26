@@ -64,6 +64,13 @@
 		return internals.out(isStringForReal, 'a string', isSilent);
 	};
 
+	externals.isHexString = function (isSilent) {
+		var value = internals.getValue();
+		var isString = the(value).isString(true);
+		var isHexString = isString && (/^[0-9a-f]+$/i).test(value);
+		return internals.out(isHexString, 'a hex string', isSilent);
+	};
+
 	externals.isNull = function (isSilent) {
 		var value = internals.getValue();
 		var isNull = (value === null);
