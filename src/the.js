@@ -104,17 +104,21 @@
 		internals.setValue(undefined);
 	};
 
+	internals.logWarning = function (value, typeDescription) {
+		console.warn(
+			'%s Expected %s, got %s (%s)',
+			TAG,
+			typeDescription,
+			Object.prototype.toString.call(value),
+			value
+		);
+		console.trace(value);
+	};
+
 	internals.out = function (isCorrectType, typeDescription, isSilent) {
 		var value = internals.getValue();
 		if (!isCorrectType && !isSilent) {
-			console.warn(
-				'%s Expected %s, got %s (%s)',
-			 	TAG,
-			 	typeDescription,
-			 	Object.prototype.toString.call(value),
-				value
-			);
-			console.trace(value);
+			internals.logWarning(value, typeDescription);
 		}
 		return isCorrectType;
 	};
