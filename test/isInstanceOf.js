@@ -8,6 +8,7 @@ const the = require('../dist/the.min.js');
 describe('isInstanceOf', function () {
 
 	const Thing = function () {};
+	const NotThing = function () {};
 
 	const validValues = [
 		new Thing()
@@ -49,6 +50,21 @@ describe('isInstanceOf', function () {
 		{}
 	];
 
+	const validConstructors = [
+		Thing
+	];
+
+	const invalidConstructors = [
+		Array,
+		Date,
+		Function,
+		NotThing,
+		Number,
+		Object,
+		RegExp,
+		String
+	];
+
 	validValues.forEach(function (value) {
 		describe(''+value, function () {
 			it('should return true', function () {
@@ -57,10 +73,28 @@ describe('isInstanceOf', function () {
 		});
 	});
 
+	validConstructors.forEach(function (constructor) {
+		const thing = new Thing();
+		describe(''+constructor, function () {
+			it('should return true', function () {
+				assert.equal(true, the(thing).isInstanceOf(constructor, true));
+			});
+		});
+	});
+
 	invalidValues.forEach(function (value) {
 		describe(''+value, function () {
 			it('should return false', function () {
 				assert.equal(false, the(value).isInstanceOf(Thing, true));
+			});
+		});
+	});
+
+	invalidConstructors.forEach(function (constructor) {
+		const thing = new Thing();
+		describe(''+constructor, function () {
+			it('should return false', function () {
+				assert.equal(false, the(thing).isInstanceOf(constructor, true));
 			});
 		});
 	});

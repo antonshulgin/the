@@ -14,7 +14,11 @@
 
 	externals.isInstanceOf = function (constructor, isSilent) {
 		var value = internals.getValue();
-		var isInstanceOf = (value instanceof constructor);
+		var isDefined = the(value).isDefined(true);
+		var isNotNull = !the(value).isNull(true);
+		var isPrototypeOf = isDefined && isNotNull && Object.getPrototypeOf(value).constructor.name === constructor.name;
+		var isInstanceOf = isPrototypeOf && (value instanceof constructor);
+		console.log(value);
 		return internals.out(isInstanceOf, 'an instance of ' + constructor.name, isSilent);
 	};
 
@@ -104,17 +108,21 @@
 		internals.setValue(undefined);
 	};
 
+	internals.logWarning = function (value, typeDescription) {
+		console.warn(
+			'%s Expected %s, got %s (%s)',
+			TAG,
+			typeDescription,
+			Object.prototype.toString.call(value),
+			value
+		);
+		console.trace(value);
+	};
+
 	internals.out = function (isCorrectType, typeDescription, isSilent) {
 		var value = internals.getValue();
 		if (!isCorrectType && !isSilent) {
-			console.warn(
-				'%s Expected %s, got %s (%s)',
-			 	TAG,
-			 	typeDescription,
-			 	Object.prototype.toString.call(value),
-				value
-			);
-			console.trace(value);
+			internals.logWarning(value, typeDescription);
 		}
 		return isCorrectType;
 	};
