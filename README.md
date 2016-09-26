@@ -86,7 +86,7 @@ the({}).isString(); // false
 
 ### .isHexString([isSilent]);
 
-Checks if the value is a string.
+Checks if the value is a hex string.
 
 ```javascript
 the('000000').isHexString(); // true
