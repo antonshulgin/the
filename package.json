@@ -5,10 +5,10 @@
   "main": "src/the.js",
   "scripts": {
     "start": "npm run build",
-    "build": "npm run version-bump-patch && npm run reset-dist && npm run uglify",
+    "build": "npm run version-bump-patch && npm run reset-dist && npm run uglify && npm test",
     "reset-dist": "rm -rf ./dist/ && mkdir ./dist/",
     "uglify": "./node_modules/uglifyjs/bin/uglifyjs ./src/the.js --compress --mangle --output=./dist/the.min.js",
-    "test": "npm run build && ./node_modules/mocha/bin/mocha ./test/everything.js",
+    "test": "./node_modules/mocha/bin/mocha ./test/everything.js",
     "version-bump-patch": "npm version patch"
   },
   "repository": {
