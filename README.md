@@ -95,6 +95,7 @@ the('42').isHexString(); // true
 the(' 0 0 ').isHexString(); // false
 the('ghijklmnopqrstuvwxyz').isHexString(); // false
 the('').isHexString(); // false
+```
 
 ### .isBoolean([isSilent]);
 
