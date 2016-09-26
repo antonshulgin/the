@@ -1,6 +1,6 @@
 {
   "name": "the.js",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "Type-checking library for Javascript",
   "main": "src/the.js",
   "scripts": {
