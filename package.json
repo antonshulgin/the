@@ -23,8 +23,8 @@
     "js"
   ],
   "files": [
-    "./src/the.js",
-    "./dist/the.min.js"
+    "src/the.js",
+    "dist/the.min.js"
   ],
   "author": "Anton Shulgin <anton.shulgin@gmx.com>",
   "license": "ISC",
