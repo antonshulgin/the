@@ -1,6 +1,6 @@
 {
   "name": "the.js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Type-checking library for Javascript",
   "main": "src/the.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "build": "npm run reset-dist && npm run uglify",
     "reset-dist": "rm -rf ./dist/ && mkdir ./dist/",
     "uglify": "./node_modules/uglifyjs/bin/uglifyjs ./src/the.js --compress --mangle --output=./dist/the.min.js",
-		"test": "npm run build && ./node_modules/mocha/bin/mocha ./test/everything.js"
+    "test": "npm run build && ./node_modules/mocha/bin/mocha ./test/everything.js"
   },
   "repository": {
     "type": "git",
