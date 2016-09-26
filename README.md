@@ -5,7 +5,7 @@ A type checking library for Javascript.
 ## Installation and setup
 
 ```shell
-$ npm install https://github.com/antonshulgin/the
+$ npm install the.js
 ```
 
 For Node.js:
