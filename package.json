@@ -1,6 +1,6 @@
 {
   "name": "the.js",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Type-checking library for Javascript",
   "main": "src/the.js",
   "scripts": {
@@ -22,10 +22,10 @@
     "check",
     "js"
   ],
-	"files": [
-		"./src/the.js",
-		"./dist/the.min.js"
-	],
+  "files": [
+    "./src/the.js",
+    "./dist/the.min.js"
+  ],
   "author": "Anton Shulgin <anton.shulgin@gmx.com>",
   "license": "ISC",
   "bugs": {
