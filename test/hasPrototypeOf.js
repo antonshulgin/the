@@ -5,7 +5,7 @@
 const assert = require('assert');
 const the = require('../dist/the.min.js');
 
-describe('isInstanceOf', function () {
+describe('hasPrototypeOf', function () {
 
 	const Thing = function () {};
 	const NotThing = function () {};
@@ -69,7 +69,7 @@ describe('isInstanceOf', function () {
 	validValues.forEach(function (value) {
 		describe(''+value, function () {
 			it('should return true', function () {
-				assert.equal(true, the(value).isInstanceOf(Thing, true));
+				assert.equal(true, the(value).hasPrototypeOf(Thing, true));
 			});
 		});
 	});
@@ -78,7 +78,7 @@ describe('isInstanceOf', function () {
 		const thing = new Thing();
 		describe(''+constructor, function () {
 			it('should return true', function () {
-				assert.equal(true, the(thing).isInstanceOf(constructor, true));
+				assert.equal(true, the(thing).hasPrototypeOf(constructor, true));
 			});
 		});
 	});
@@ -86,7 +86,7 @@ describe('isInstanceOf', function () {
 	invalidValues.forEach(function (value) {
 		describe(''+value, function () {
 			it('should return false', function () {
-				assert.equal(false, the(value).isInstanceOf(Thing, true));
+				assert.equal(false, the(value).hasPrototypeOf(Thing, true));
 			});
 		});
 	});
@@ -95,7 +95,7 @@ describe('isInstanceOf', function () {
 		const thing = new Thing();
 		describe(''+constructor, function () {
 			it('should return false', function () {
-				assert.equal(false, the(thing).isInstanceOf(constructor, true));
+				assert.equal(false, the(thing).hasPrototypeOf(constructor, true));
 			});
 		});
 	});

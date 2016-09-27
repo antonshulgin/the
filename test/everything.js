@@ -14,3 +14,4 @@ require('./isArray.js');
 require('./isDate.js');
 require('./isRegExp.js');
 require('./isInstanceOf.js');
+require('./hasPrototypeOf.js');
