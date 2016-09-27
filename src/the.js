@@ -12,13 +12,19 @@
 		return externals;
 	}
 
+	externals.hasPrototypeOf = function (constructor, isSilent) {
+		var value = internals.getValue();
+		var theValue = the(value);
+		var isDefined = theValue.isDefined(true);
+		var isNotNull = !theValue.isNull(true);
+		var hasPrototypeOf = isDefined && isNotNull && Object.getPrototypeOf(value).constructor.name === constructor.name;
+		return internals.out(hasPrototypeOf, 'value to have the prototype of ' + constructor.name, isSilent);
+	};
+
 	externals.isInstanceOf = function (constructor, isSilent) {
 		var value = internals.getValue();
-		var isDefined = the(value).isDefined(true);
-		var isNotNull = !the(value).isNull(true);
-		var isPrototypeOf = isDefined && isNotNull && Object.getPrototypeOf(value).constructor.name === constructor.name;
-		var isInstanceOf = isPrototypeOf && (value instanceof constructor);
-		console.log(value);
+		var hasPrototypeOf = the(value).hasPrototypeOf(constructor, true);
+		var isInstanceOf = hasPrototypeOf && (value instanceof constructor);
 		return internals.out(isInstanceOf, 'an instance of ' + constructor.name, isSilent);
 	};
 
