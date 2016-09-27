@@ -186,9 +186,8 @@ the(num).isInstanceOf(Number); // true
 
 let Thing = function () {};
 the(new Thing()).isInstanceOf(Thing); // true
-the(new Thing()).isInstanceOf(Object); // true
+the(new Thing()).isInstanceOf(Object); // false
 the(new Thing()).isInstanceOf(Function); // false
-
 the({}).isInstanceOf(Object); // true
 the([]).isInstanceOf(Array); // true
 the(function () {}).isInstanceOf(Function); // true
