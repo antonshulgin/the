@@ -180,8 +180,6 @@ the('/^.+$/').isRegExp(); // false
 
 Checks if the value is an instance of a class (constructor).
 
-This will return `false` for primitives. Object literals, arrays, and functions are fine though.
-
 ```javascript
 let num = new Number(42);
 the(num).isInstanceOf(Number); // true
@@ -196,4 +194,23 @@ the([]).isInstanceOf(Array); // true
 the(function () {}).isInstanceOf(Function); // true
 the(42).isInstanceOf(Number); // false
 the('42').isInstanceOf(String); // false
+```
+
+### .hasPrototypeOf(constructor[, isSilent]);
+
+Checks if the value has a prototype of a class (constructor).
+
+```javascript
+let num = new Number(42);
+the(num).hasPrototypeOf(Number); // true
+the(42).hasPrototypeOf(Number); // true
+the(NaN).hasPrototypeOf(Number); // true
+the(Infinity).hasPrototypeOf(Number); // true
+the('42').hasPrototypeOf(String); // true
+the(null).hasPrototypeOf(Number); // false
+
+let Thing = function () {};
+the(new Thing()).hasPrototypeOf(Thing); // true
+the(new Thing()).hasPrototypeOf(Object); // false
+the(new Thing()).hasPrototypeOf(Function); // false
 ```
