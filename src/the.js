@@ -28,9 +28,9 @@
 
 		function isFrozen(isSilent) {
 			var value = getValue();
-			var isObject = the(value).isObject(isSilent);
+			var isObject = the(value).isObject(true);
 			var isFrozen = isObject && Object.isFrozen(value);
-			return out(isFrozen, 'a frozen object');
+			return out(isFrozen, 'a frozen object', isSilent);
 		}
 
 		function hasPrototypeOf(constructor, isSilent) {
