@@ -15,3 +15,4 @@ require('./isDate.js');
 require('./isRegExp.js');
 require('./isInstanceOf.js');
 require('./hasPrototypeOf.js');
+require('./isFrozen.js');

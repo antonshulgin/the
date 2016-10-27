@@ -22,8 +22,16 @@
 		externals.isRegExp = isRegExp;
 		externals.isInstanceOf = isInstanceOf;
 		externals.hasPrototypeOf = hasPrototypeOf;
+		externals.isFrozen = isFrozen;
 
 		return externals;
+
+		function isFrozen(isSilent) {
+			var value = getValue();
+			var isObject = the(value).isObject(isSilent);
+			var isFrozen = isObject && Object.isFrozen(value);
+			return out(isFrozen, 'a frozen object');
+		}
 
 		function hasPrototypeOf(constructor, isSilent) {
 			var value = getValue();
