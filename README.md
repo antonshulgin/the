@@ -213,3 +213,14 @@ the(new Thing()).hasPrototypeOf(Thing); // true
 the(new Thing()).hasPrototypeOf(Object); // false
 the(new Thing()).hasPrototypeOf(Function); // false
 ```
+
+### .isFrozen(c[isSilent]);
+
+Checks if the value is [a frozen object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isFrozen).
+
+```javascript
+let object = { value: 42 };
+let frozenObject = Object.freeze({ value: 42 });
+the(frozenObject).isFrozen(); // true
+the(object).isFrozen(); // false
+```
