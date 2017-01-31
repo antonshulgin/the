@@ -14,6 +14,7 @@
 		externals.isNull = isNull;
 		externals.isHexString = isHexString;
 		externals.isString = isString;
+		externals.isEmptyString = isEmptyString;
 		externals.isBoolean = isBoolean;
 		externals.isFunction = isFunction;
 		externals.isObject = isObject;
@@ -93,6 +94,13 @@
 			var isPlainString = (typeof value === 'string');
 			var isStringForReal = isString && isPlainString;
 			return out(isStringForReal, 'a string', isSilent);
+		}
+
+		function isEmptyString(isSilent) {
+			var value = getValue();
+			var isString = the(value).isString(true);
+			var isEmptyString = isString && (isString.length === 0);
+			return out(isEmptyString, 'an empty string', isSilent);
 		}
 
 		function isHexString(isSilent) {
