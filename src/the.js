@@ -99,7 +99,7 @@
 		function isEmptyString(isSilent) {
 			var value = getValue();
 			var isString = the(value).isString(true);
-			var isEmptyString = isString && (isString.length === 0);
+			var isEmptyString = isString && (value.length === 0);
 			return out(isEmptyString, 'an empty string', isSilent);
 		}
 
