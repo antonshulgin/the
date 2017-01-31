@@ -97,6 +97,17 @@ the('ghijklmnopqrstuvwxyz').isHexString(); // false
 the('').isHexString(); // false
 ```
 
+### .isEmptyString([isSilent]);
+
+Checks if the value is a string.
+
+```javascript
+the('').isEmptyString(); // true
+the('42').isEmptyString(); // false
+the([]).isEmptyString(); // false
+the({}).isEmptyString(); // false
+```
+
 ### .isBoolean([isSilent]);
 
 Checks if the value is boolean.
