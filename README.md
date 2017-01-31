@@ -99,7 +99,7 @@ the('').isHexString(); // false
 
 ### .isEmptyString([isSilent]);
 
-Checks if the value is a string.
+Checks if the value is an empty string.
 
 ```javascript
 the('').isEmptyString(); // true
